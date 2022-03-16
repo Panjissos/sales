@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_14_232146) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_15_221839) do
+  create_table "batches", force: :cascade do |t|
+    t.string "reference"
+    t.string "purchaseChannel"
+    t.integer "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_batches_on_order_id"
+  end
+
   create_table "orders", force: :cascade do |t|
     t.string "reference", null: false
     t.string "purchaseChannel", null: false
@@ -24,4 +33,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_14_232146) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "batches", "orders"
 end

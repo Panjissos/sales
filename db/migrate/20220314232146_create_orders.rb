@@ -9,7 +9,6 @@ class CreateOrders < ActiveRecord::Migration[7.0]
       t.float :totalValue, null: false
       t.string :lineItems, null: false
       t.string :status, null: false
-
       t.timestamps
     end
   end
