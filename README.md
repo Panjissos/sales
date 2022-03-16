@@ -26,7 +26,7 @@
 
 ```bash
 # clone o projeto
-https://github.com/Panjissos/sales.git
+git clone https://github.com/Panjissos/sales.git
 
 # abra a pasta clonada
 cd sales
