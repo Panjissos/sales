@@ -1,24 +1,77 @@
-# README
+# :bank: Sales API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+<table>
+  <tr>
+    <td>Ruby version</td>
+    <td>
+      2.7.5
+    </td>
+  </tr>
+  <tr>
+    <td>Rails version</td>
+    <td>
+      7.0.2.3
+    </td>
+  </tr>
+  <tr>
+    <td>Database</td>
+    <td>
+      SQLite3 (dev)
+    </td>
+  </tr>
+</table>
 
-* Ruby version
+## :gear: Configurações iniciais para executar o projeto 
 
-* System dependencies
+```bash
+# clone o projeto
+git clone https://github.com/Panjissos/sales.git
 
-* Configuration
+# abra a pasta clonada
+cd sales
 
-* Database creation
+# instale as dependências do Ruby on Rails
+bundle install 
 
-* Database initialization
+# crie o banco de dados
+rails db:create
 
-* How to run the test suite
+# crie as tabelas
+rails db:migrate
 
-* Services (job queues, cache servers, search engines, etc.)
+# execute o projeto
+rails s
+```
 
-* Deployment instructions
+:office: O backend está disponível na porta `http://localhost:3000`.
+### API Endpoint
 
-* ...
+Os endpoints disponíveis:
+
+| Endpoints                   | Função                    |              
+| --------------------------- | --------------------------|
+| `GET /api/batches`          | Carrega todos os lotes    |               
+| `GET /api/batche/:id`       | Carrega um único lote     |                  
+| `POST /api/batches`         | Cria um lote              |             
+| `PUT /api/batches:id`       | Edita um lote             |
+| `DELETE /api/batches:id`    | Deleta um lote            |              
+| `GET /api/orders`           | Carregas todos os pedidos |                 
+| `GET /api/orders/:id`       | Carrega um único pedido   |    
+| `POST /api/orders`          | Cria um pedido            |                
+| `PUT /api/orders/:id`       | Edita um pedido           |
+| `DELETE /api/orders/:id`    | Deleta um pedido          |       
+
+### :airplane: Postman para testar API
+
+https://www.postman.com/downloads/
+
+### :bellhop_bell: Ainda falta
+
+- Implementar relacionamento one to many(has_many), entre lote e pedido, onde para um lote possui vários pedidos.
+- Implementar token
+- Implementar testes
+
+
+
+
