@@ -32,7 +32,7 @@ git clone https://github.com/Panjissos/sales.git
 cd sales
 
 # instale as dependências do Ruby on Rails
-bundle install --without production
+bundle install 
 
 # crie o banco de dados
 rails db:create
